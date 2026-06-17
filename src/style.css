@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+/* =============================================
+   CUSTOM BASE STYLES
+   ============================================= */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+}
+
+/* =============================================
+   CUSTOM COMPONENTS (reusable patterns)
+   ============================================= */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+  }
+}
+
+/* =============================================
+   CUSTOM UTILITIES
+   ============================================= */
+@layer utilities {
+  .section-padding {
+    @apply px-4 py-16 md:px-8 md:py-24;
+  }
+}
