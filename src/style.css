@@ -1,6 +1,53 @@
 @import "tailwindcss";
 
 /* =============================================
+   FONTS
+   ============================================= */
+
+/* Plus Jakarta Sans — body / UI */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('./assets/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Playfair Display — headings */
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('./assets/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans:    'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --color-primary:    #A58F67;
+  --color-beige: #FCF9F7;
+  --color-gray-primary: #7F7F7F;
+  --color-gray-dark: #3D3E42;
+}
+
+/* =============================================
    CUSTOM BASE STYLES
    ============================================= */
 @layer base {
@@ -10,7 +57,15 @@
 
   body {
     @apply antialiased;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--color-beige);
+    background-image: url('./assets/images/noisy-texture-bg.png');
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+
 }
 
 /* =============================================
@@ -18,7 +73,15 @@
    ============================================= */
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+    @apply inline-flex items-center gap-2 bg-primary text-white py-2 px-4 rounded-lg;
+  }
+
+  .btn-primary-icon {
+    @apply transition-transform duration-200 ease-out;
+  }
+
+  .btn-primary:hover .btn-primary-icon {
+    @apply translate-x-1;
   }
 }
 
