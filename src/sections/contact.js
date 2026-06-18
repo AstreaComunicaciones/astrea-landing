@@ -1,5 +1,6 @@
 import logoAstrea from '../assets/images/icon-astrea-comunicaciones.webp'
 import iconCheck from '../assets/images/check-submit.svg'
+import { playFormSuccessAnimation } from '../js/animations.js'
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xbdevgzl'
 
@@ -8,7 +9,7 @@ export function Contact() {
     <div id="contact" class="bg-primary-light py-10 lg:py-28 px-5 xl:px-0">
      <div class="max-w-[600px] lg:max-w-[1180px] mx-auto">
        <div class="flex justify-between flex-col lg:flex-row md:gap-10">
-        <div class="lg:px-8 lg:pt-12">
+        <div id="contact-copy" class="lg:px-8 lg:pt-12">
           <img src="${logoAstrea}" alt="Astrea Comunicaciones" width="160" height="160" class="w-full max-w-32 lg:max-w-40 lg:mb-4 mx-auto lg:mx-0">
           <h2 class="text-3xl md:text-[40px] leading-normal lg:leading-[55px] font-bold text-gray-dark mb-4 md:mb-8 text-center lg:text-left">¿Qué tienes en mente? <br> ¡Te ayudamos!</h2>
           <p class="text-gray-dark text-balance text-base lg:text-[20px] mb-10 md:mb-5 lg:mb-0 text-center lg:text-left">Déjanos tus datos y te contactaremos pronto para entender tu negocio y sugerirte el siguiente paso.</p>
@@ -59,7 +60,7 @@ export function Contact() {
             <div id="contact-form-success" class="hidden text-center py-8" role="status">
               <h3 class="text-xl md:text-2xl font-bold text-gray-dark mb-3">¡Gracias por contactarnos!</h3>
               <p class="text-gray-dark text-balance text-base md:text-[20px] mb-6">Recibimos tu solicitud. Te contactaremos pronto.</p>
-              <img src="${iconCheck}" alt="Check" width="80" height="80" class="mx-auto">
+              <img id="contact-form-check" src="${iconCheck}" alt="" width="80" height="80" class="mx-auto" aria-hidden="true">
             </div>
 
             <p id="contact-form-privacy" class="text-gray-primary md:text-balance text-sm text-center mt-6">Al enviar este formulario, tus datos serán usados solo para contactarte sobre tu solicitud.</p>
@@ -117,6 +118,7 @@ export function initContactForm() {
       form.classList.add('hidden')
       privacyEl.classList.add('hidden')
       successEl.classList.remove('hidden')
+      playFormSuccessAnimation()
     } catch {
       errorEl.textContent = 'No pudimos enviar tu solicitud. Intenta de nuevo en unos minutos.'
       errorEl.classList.remove('hidden')
