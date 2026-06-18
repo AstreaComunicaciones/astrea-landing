@@ -1,6 +1,7 @@
-import logoAstrea from '../assets/images/icon-astrea-comunicaciones.webp'
 import iconCheck from '../assets/images/check-submit.svg'
 import { playFormSuccessAnimation } from '../js/animations.js'
+
+const iconAstrea = '/icon-astrea-comunicaciones.webp'
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xbdevgzl'
 
@@ -10,7 +11,7 @@ export function Contact() {
      <div class="max-w-[600px] lg:max-w-[1180px] mx-auto">
        <div class="flex justify-between flex-col lg:flex-row md:gap-10">
         <div id="contact-copy" class="lg:px-8 lg:pt-12">
-          <img src="${logoAstrea}" alt="Astrea Comunicaciones" width="160" height="160" class="w-full max-w-32 lg:max-w-40 lg:mb-4 mx-auto lg:mx-0">
+          <img src="${iconAstrea}" alt="Astrea Comunicaciones" width="160" height="160" class="w-full max-w-32 lg:max-w-40 lg:mb-4 mx-auto lg:mx-0">
           <h2 class="text-3xl md:text-[40px] leading-normal lg:leading-[55px] font-bold text-gray-dark mb-4 md:mb-8 text-center lg:text-left">¿Qué tienes en mente? <br> ¡Te ayudamos!</h2>
           <p class="text-gray-dark text-balance text-base lg:text-[20px] mb-10 md:mb-5 lg:mb-0 text-center lg:text-left">Déjanos tus datos y te contactaremos pronto para entender tu negocio y sugerirte el siguiente paso.</p>
         </div>

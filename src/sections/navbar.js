@@ -1,5 +1,6 @@
 import iconRight from '../assets/images/icon-right.svg'
-import iconAstrea from 'icon-astrea-comunicaciones.webp'
+
+const iconAstrea = '/icon-astrea-comunicaciones.webp'
 
 export function Navbar() {
   return `
