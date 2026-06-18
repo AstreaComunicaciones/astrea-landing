@@ -5,9 +5,9 @@ import iconLinkedin from '../assets/images/icon-linkedin.svg'
 
 export function Footer() {
   return `
-    <footer class="bg-primary-light">
-      <div class="max-w-[1180px] mx-auto flex justify-between items-center pb-8">
-        <p class="text-sm text-gray-dark">© ${new Date().getFullYear()} Astrea Comunicaciones. Todos los derechos reservados.</p>
+    <footer class="bg-primary-light px-5 xl:px-0">
+      <div class="max-w-[1180px] mx-auto flex flex-col-reverse gap-8 md:gap-0 md:flex-row justify-between items-center pb-8">
+        <p class="text-xs md:text-sm text-gray-dark">© ${new Date().getFullYear()} Astrea. Todos los derechos reservados.</p>
         <div class="flex items-center gap-4">
           <a href="#" class="text-sm text-gray-dark"><img src="${iconFacebook}" alt="Facebook" width="20" height="20"></a>
           <a href="#" class="text-sm text-gray-dark"><img src="${iconInstagram}" alt="Instagram" width="20" height="20"></a>

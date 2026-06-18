@@ -46,6 +46,12 @@
   --color-beige: #FCF9F7;
   --color-gray-primary: #7F7F7F;
   --color-gray-dark: #3D3E42;
+
+  /* Breakpoints (mobile-first: md ≥765px, lg ≥992px, xl ≥1200px) */
+  --breakpoint-*: initial;
+  --breakpoint-md: 765px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
 }
 
 /* =============================================

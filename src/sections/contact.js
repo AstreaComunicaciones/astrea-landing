@@ -5,16 +5,16 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xbdevgzl'
 
 export function Contact() {
   return `
-    <div class="bg-primary-light py-28">
-     <div class="max-w-[1180px] mx-auto">
-       <div class="flex justify-between flex-col md:flex-row md:gap-10">
-        <div class="px-8 md:pt-12">
-          <img src="${logoAstrea}" alt="Astrea Comunicaciones" width="160" height="160" class="w-full max-w-40 mb-4">
-          <h2 class="text-[40px] leading-[55px] font-bold text-gray-dark mb-8">¿Qué tienes en mente? <br> ¡Te ayudamos!</h2>
-          <p class="text-gray-dark text-balance md:text-[20px]">Déjanos tus datos y te contactaremos pronto para entender tu negocio y sugerirte el siguiente paso.</p>
+    <div id="contact" class="bg-primary-light py-10 lg:py-28 px-5 xl:px-0">
+     <div class="max-w-[600px] lg:max-w-[1180px] mx-auto">
+       <div class="flex justify-between flex-col lg:flex-row md:gap-10">
+        <div class="lg:px-8 lg:pt-12">
+          <img src="${logoAstrea}" alt="Astrea Comunicaciones" width="160" height="160" class="w-full max-w-32 lg:max-w-40 lg:mb-4 mx-auto lg:mx-0">
+          <h2 class="text-3xl md:text-[40px] leading-normal lg:leading-[55px] font-bold text-gray-dark mb-4 md:mb-8 text-center lg:text-left">¿Qué tienes en mente? <br> ¡Te ayudamos!</h2>
+          <p class="text-gray-dark text-balance text-base lg:text-[20px] mb-10 md:mb-5 lg:mb-0 text-center lg:text-left">Déjanos tus datos y te contactaremos pronto para entender tu negocio y sugerirte el siguiente paso.</p>
         </div>
         <div>
-          <div class="bg-white py-12 px-12 rounded-lg w-[570px]">
+          <div class="bg-white px-6 py-8 md:p-12 rounded-lg w-full lg:w-[570px]">
             <form id="contact-form" action="${FORMSPREE_ENDPOINT}" method="POST">
               <input type="hidden" name="_subject" value="Nueva solicitud de contacto — Astrea Comunicaciones" />
 
@@ -24,11 +24,11 @@ export function Contact() {
 
               <div class="mb-5 w-full">
                 <label for="nombre" class="block text-gray-dark text-sm font-bold mb-2">Nombre</label>
-                <input type="text" id="nombre" name="nombre" class="p-3 px-4 border border-primary rounded-lg w-full bg-beige" placeholder="Tu nombre" autocomplete="name" required>
+                <input type="text" id="nombre" name="nombre" class="p-3 px-4 border border-primary rounded-lg w-full bg-beige text-sm md:text-base" placeholder="Tu nombre" autocomplete="name" required>
               </div>
               <div class="mb-5 w-full">
                 <label for="empresa" class="block text-gray-dark text-sm font-bold mb-2">Empresa</label>
-                <input type="text" id="empresa" name="empresa" class="p-3 px-4 border border-primary rounded-lg w-full bg-beige" placeholder="Nombre de tu empresa" autocomplete="organization" required>
+                <input type="text" id="empresa" name="empresa" class="p-3 px-4 border border-primary rounded-lg w-full bg-beige text-sm md:text-base" placeholder="Nombre de tu empresa" autocomplete="organization" required>
               </div>
               <div class="mb-5 w-full">
                 <label for="telefono" class="block text-gray-dark text-sm font-bold mb-2">Número de teléfono</label>
@@ -36,7 +36,7 @@ export function Contact() {
                   type="tel"
                   id="telefono"
                   name="telefono"
-                  class="p-3 px-4 border border-primary rounded-lg w-full bg-beige"
+                  class="p-3 px-4 border border-primary rounded-lg w-full bg-beige text-sm md:text-base"
                   placeholder="912345678"
                   inputmode="numeric"
                   maxlength="9"
@@ -48,21 +48,21 @@ export function Contact() {
               </div>
               <div class="mb-10 w-full">
                 <label for="email" class="block text-gray-dark text-sm font-bold mb-2">Correo electrónico</label>
-                <input type="email" id="email" name="email" class="p-3 px-4 border border-primary rounded-lg w-full bg-beige" placeholder="correo@empresa.com" autocomplete="email" required>
+                <input type="email" id="email" name="email" class="p-3 px-4 border border-primary rounded-lg w-full bg-beige text-sm md:text-base" placeholder="correo@empresa.com" autocomplete="email" required>
               </div>
 
               <p id="contact-form-error" class="hidden text-sm text-red-600 text-center mb-4" role="alert"></p>
 
-              <button type="submit" id="contact-form-submit" disabled class="w-full btn-primary text-lg font-semibold py-4 px-8 justify-center hover:bg-primary/95 hover:shadow-lg transition-all duration-250">Enviar solicitud</button>
+              <button type="submit" id="contact-form-submit" disabled class="w-full btn-primary text-base md:text-lg font-semibold py-4 px-8 justify-center hover:bg-primary/95 hover:shadow-lg transition-all duration-250">Enviar solicitud</button>
             </form>
 
             <div id="contact-form-success" class="hidden text-center py-8" role="status">
-              <h3 class="text-2xl font-bold text-gray-dark mb-3">¡Gracias por contactarnos!</h3>
-              <p class="text-gray-dark text-balance mb-6">Recibimos tu solicitud. Te contactaremos pronto.</p>
+              <h3 class="text-xl md:text-2xl font-bold text-gray-dark mb-3">¡Gracias por contactarnos!</h3>
+              <p class="text-gray-dark text-balance text-base md:text-[20px] mb-6">Recibimos tu solicitud. Te contactaremos pronto.</p>
               <img src="${iconCheck}" alt="Check" width="80" height="80" class="mx-auto">
             </div>
 
-            <p id="contact-form-privacy" class="text-gray-primary text-balance text-sm text-center mt-6">Al enviar este formulario, tus datos serán usados solo para contactarte sobre tu solicitud.</p>
+            <p id="contact-form-privacy" class="text-gray-primary md:text-balance text-sm text-center mt-6">Al enviar este formulario, tus datos serán usados solo para contactarte sobre tu solicitud.</p>
           </div>
         </div>
        </div>
