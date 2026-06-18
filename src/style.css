@@ -60,6 +60,7 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
     background-color: var(--color-beige);
     background-image: url('./assets/images/noisy-texture-bg.png');
+    backdrop-filter: blur(2px);
   }
 
   h1, h2, h3, h4, h5, h6 {
