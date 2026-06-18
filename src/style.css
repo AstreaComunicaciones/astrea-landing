@@ -41,7 +41,8 @@
 @theme {
   --font-sans:    'Plus Jakarta Sans', sans-serif;
   --font-display: 'Playfair Display', serif;
-  --color-primary:    #A58F67;
+  --color-primary: #A58F67;
+  --color-primary-light: rgba(165, 143, 103, 0.1);
   --color-beige: #FCF9F7;
   --color-gray-primary: #7F7F7F;
   --color-gray-dark: #3D3E42;
@@ -74,7 +75,11 @@
    ============================================= */
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center gap-2 bg-primary text-white py-2 px-4 rounded-lg;
+    @apply inline-flex items-center gap-2 bg-primary text-white py-2 px-4 rounded-lg cursor-pointer;
+  }
+
+  .btn-primary:disabled {
+    @apply opacity-50 cursor-not-allowed;
   }
 
   .btn-primary-icon {
