@@ -18,12 +18,13 @@
   </head>
   <body>
 
-    <!-- NAVBAR -->
-    <header id="navbar"></header>
-
     <!-- SECTIONS -->
     <main>
-      <section id="hero"></section>
+      <!-- Hero + navbar share one visual plane (Figma composition) -->
+      <section id="hero-stage" class="relative">
+        <header id="navbar" class="absolute inset-x-0 top-0 z-20"></header>
+        <div id="hero"></div>
+      </section>
       <section id="features"></section>
       <section id="contact"></section>
     </main>

@@ -17,7 +17,7 @@ function splitIntoWords(element) {
   const text = element.textContent.trim().replace(/\s+/g, ' ')
   element.textContent = ''
   element.setAttribute('aria-label', text)
-  element.classList.add('inline-flex', 'flex-wrap', 'justify-center', 'gap-x-[0.28em]')
+  element.classList.add('inline-flex', 'flex-wrap', 'justify-start', 'gap-x-[0.28em]')
 
   text.split(' ').forEach((word) => {
     const span = document.createElement('span')
@@ -47,8 +47,9 @@ function animateHeroTitle(mobile) {
 }
 
 function animateHeroDesktop() {
-  const heroEyebrow = document.querySelector('#hero > div > p:first-of-type')
-  const heroDescription = document.querySelector('#hero > div > p:last-of-type')
+  const heroEyebrow = document.querySelector('#hero-eyebrow')
+  const heroDescription = document.querySelector('#hero-description')
+  const heroActions = document.querySelector('#hero-actions')
 
   if (heroEyebrow) {
     gsap.from(heroEyebrow, {
@@ -65,7 +66,17 @@ function animateHeroDesktop() {
       y: 20,
       duration: 0.7,
       ease: 'power2.out',
-      delay: 0.6,
+      delay: 0.55,
+    })
+  }
+
+  if (heroActions) {
+    gsap.from(heroActions, {
+      opacity: 0,
+      y: 16,
+      duration: 0.6,
+      ease: 'power2.out',
+      delay: 0.75,
     })
   }
 }
