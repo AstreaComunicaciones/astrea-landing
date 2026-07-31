@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1440" />
+  <title>Astrea — Propuestas Manifiesto & Compromiso</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --beige: #FCF9F7;
+      --white: #FFFFFF;
+      --dark: #3D3E42;
+      --gold: #A58F67;
+      --gray: #7F7F7F;
+      --line: #E8E2DB;
+      --soft: #F5F0EB;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+      --font-display: 'Playfair Display', serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #EAE6E1;
+      color: var(--dark);
+      font-family: var(--font-sans);
+      padding: 48px 40px 80px;
+    }
+
+    .board-label {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .board-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 600;
+      margin-bottom: 40px;
+    }
+
+    .proposal-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 48px 0 16px;
+    }
+    .proposal-tag:first-of-type { margin-top: 0; }
+
+    .section {
+      width: 1440px;
+      background: var(--beige);
+      position: relative;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
+    /* ========== PROPOSAL A — Editorial split ========== */
+    .a {
+      padding: 96px 100px;
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+    }
+    .a-header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+    }
+    .a-header h2 {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 1.2;
+      max-width: 720px;
+    }
+    .a-cols {
+      display: grid;
+      grid-template-columns: 1fr 440px;
+      gap: 56px;
+      align-items: start;
+    }
+    .a-manifesto {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .a-manifesto .lead {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 600;
+      line-height: 1.45;
+      white-space: pre-line;
+    }
+    .a-manifesto .body {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.5;
+      white-space: pre-line;
+    }
+    .a-quote {
+      display: flex;
+      gap: 20px;
+      padding-top: 16px;
+      align-items: flex-start;
+    }
+    .a-quote .rule {
+      width: 3px;
+      min-height: 72px;
+      background: var(--gold);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .a-quote p {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-style: italic;
+      line-height: 1.5;
+      max-width: 560px;
+    }
+    .a-panel {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 40px 36px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .a-panel h3 {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .a-principle {
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .a-principle:first-of-type {
+      border-top: none;
+      padding-top: 8px;
+    }
+    .a-principle .num {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+    }
+    .a-principle .t {
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .a-principle .d {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.5;
+    }
+
+    /* ========== PROPOSAL B — Poem + strips ========== */
+    .b {
+      padding: 100px 120px 88px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+    .b-top {
+      text-align: center;
+      max-width: 780px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .b-top h2 {
+      font-family: var(--font-display);
+      font-size: 44px;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+    .b-poem {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 1.65;
+      text-align: center;
+      max-width: 680px;
+      margin-bottom: 40px;
+    }
+    .b-poem .strong {
+      font-weight: 600;
+      font-size: 28px;
+      display: block;
+      margin-bottom: 28px;
+    }
+    .b-poem .spacer { display: block; height: 20px; }
+    .b-closing {
+      width: 100%;
+      max-width: 900px;
+      background: var(--soft);
+      border-left: 3px solid var(--gold);
+      padding: 28px 36px;
+      margin-bottom: 72px;
+    }
+    .b-closing p {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-style: italic;
+      line-height: 1.45;
+      text-align: center;
+    }
+    .b-commit {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .b-commit-head {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .b-commit-head h3 {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 600;
+    }
+    .b-commit-head .sub {
+      font-size: 16px;
+      color: var(--gray);
+      max-width: 560px;
+      line-height: 1.5;
+    }
+    .b-strips {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .b-strip {
+      padding: 28px 24px;
+      background: var(--white);
+      border-top: 2px solid var(--gold);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-height: 200px;
+    }
+    .b-strip .num {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+    }
+    .b-strip .t {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .b-strip .d {
+      font-size: 14px;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <p class="board-label">Astrea · Opciones de sección</p>
+  <h1 class="board-title">Manifiesto & Nuestro compromiso</h1>
+
+  <p class="proposal-tag">Propuesta A — Editorial split</p>
+  <section class="section a" id="proposal-a">
+    <header class="a-header">
+      <p class="eyebrow">Manifiesto Astrea</p>
+      <h2>La confianza se construye.</h2>
+    </header>
+
+    <div class="a-cols">
+      <div class="a-manifesto">
+        <p class="lead">Creemos que la confianza no se compra.
+Se construye.</p>
+        <p class="body">No nace de una campaña.
+Nace de miles de decisiones coherentes.
+De conversaciones honestas.
+De mensajes claros.
+De instituciones que comunican con propósito.</p>
+        <p class="body">Porque comunicar mejor no significa decir más.
+Significa generar comprensión.
+Reducir incertidumbre.
+Fortalecer relaciones.</p>
+        <div class="a-quote">
+          <div class="rule" aria-hidden="true"></div>
+          <p>En Astrea Comunicaciones diseñamos estrategias para que las organizaciones construyan confianza antes de necesitar defenderla.</p>
+        </div>
+      </div>
+
+      <aside class="a-panel">
+        <p class="eyebrow">Nuestro compromiso</p>
+        <h3>Cómo acompañamos a cada organización.</h3>
+        <div class="a-principle">
+          <span class="num">01</span>
+          <span class="t">Aliados estratégicos</span>
+          <span class="d">Trabajamos como aliados estratégicos de cada organización.</span>
+        </div>
+        <div class="a-principle">
+          <span class="num">02</span>
+          <span class="t">Escucha primero</span>
+          <span class="d">Escuchamos antes de proponer. Comprendemos antes de intervenir.</span>
+        </div>
+        <div class="a-principle">
+          <span class="num">03</span>
+          <span class="t">Soluciones sostenibles</span>
+          <span class="d">Diseñamos soluciones sostenibles, respetando la identidad, las personas y el propósito institucional.</span>
+        </div>
+        <div class="a-principle">
+          <span class="num">04</span>
+          <span class="t">Relación de confianza</span>
+          <span class="d">Cada proyecto es una relación de confianza.</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <p class="proposal-tag">Propuesta B — Manifiesto editorial + principios</p>
+  <section class="section b" id="proposal-b">
+    <div class="b-top">
+      <p class="eyebrow">Manifiesto Astrea</p>
+      <h2>Creemos que la confianza<br />no se compra.</h2>
+    </div>
+
+    <div class="b-poem">
+      <span class="strong">Se construye.</span>
+      No nace de una campaña.<br />
+      Nace de miles de decisiones coherentes.<br />
+      De conversaciones honestas.<br />
+      De mensajes claros.<br />
+      De instituciones que comunican con propósito.
+      <span class="spacer"></span>
+      Porque comunicar mejor no significa decir más.<br />
+      Significa generar comprensión.<br />
+      Reducir incertidumbre.<br />
+      Fortalecer relaciones.
+    </div>
+
+    <div class="b-closing">
+      <p>En Astrea Comunicaciones diseñamos estrategias para que las organizaciones construyan confianza antes de necesitar defenderla.</p>
+    </div>
+
+    <div class="b-commit">
+      <div class="b-commit-head">
+        <p class="eyebrow">Nuestro compromiso</p>
+        <h3>Cómo trabajamos contigo</h3>
+        <p class="sub">Cuatro principios que guían cada relación y cada proyecto.</p>
+      </div>
+      <div class="b-strips">
+        <div class="b-strip">
+          <span class="num">01</span>
+          <span class="t">Aliados estratégicos</span>
+          <span class="d">Trabajamos como aliados estratégicos de cada organización.</span>
+        </div>
+        <div class="b-strip">
+          <span class="num">02</span>
+          <span class="t">Escucha primero</span>
+          <span class="d">Escuchamos antes de proponer. Comprendemos antes de intervenir.</span>
+        </div>
+        <div class="b-strip">
+          <span class="num">03</span>
+          <span class="t">Soluciones sostenibles</span>
+          <span class="d">Diseñamos soluciones sostenibles, respetando identidad, personas y propósito institucional.</span>
+        </div>
+        <div class="b-strip">
+          <span class="num">04</span>
+          <span class="t">Relación de confianza</span>
+          <span class="d">Cada proyecto es una relación de confianza.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
