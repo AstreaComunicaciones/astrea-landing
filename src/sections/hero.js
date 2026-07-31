@@ -54,7 +54,7 @@ export function Hero() {
             </a>
 
             <a
-              href="#features"
+              href="#por-que-astrea-section"
               class="hidden md:inline-flex items-center gap-2 text-base font-medium tracking-[0.02em] text-beige hover:text-white transition-colors duration-200 group"
             >
               Ver servicios

@@ -1,4 +1,5 @@
 import iconRight from '../assets/images/icon-right.svg'
+import gsap from 'gsap'
 
 const iconAstrea = '/astrea-comunicaciones-logo-header.webp'
 
@@ -137,17 +138,43 @@ export function initNavbar() {
     }
   })
 
-  // Smooth in-page anchors without CSS scroll-behavior (keeps ScrollTrigger stable)
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-    anchor.addEventListener('click', (e) => {
-      const id = anchor.getAttribute('href')
-      if (!id || id === '#') return
-      const target = document.querySelector(id)
-      if (!target) return
-      e.preventDefault()
-      const headerOffset = header?.offsetHeight ?? 0
-      const top = target.getBoundingClientRect().top + window.scrollY - headerOffset
-      window.scrollTo({ top, behavior: 'smooth' })
+  // Smooth anchor scroll via GSAP proxy.
+  // Native scrollTo({ behavior: 'smooth' }) gets interrupted mid-journey by
+  // ScrollTrigger scrub once other sections have been visited.
+  let scrollTween = null
+
+  document.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a[href^="#"]')
+    if (!anchor) return
+
+    const id = anchor.getAttribute('href')
+    if (!id || id === '#') return
+
+    const target = document.querySelector(id)
+    if (!target) return
+
+    e.preventDefault()
+
+    if (scrollTween) scrollTween.kill()
+
+    const headerOffset = header?.offsetHeight ?? 0
+    const destination =
+      target.getBoundingClientRect().top + window.scrollY - headerOffset
+    const startY = window.scrollY
+    const distance = Math.abs(destination - startY)
+    const proxy = { y: startY }
+
+    scrollTween = gsap.to(proxy, {
+      y: destination,
+      duration: Math.min(1.25, Math.max(0.55, distance / 2200)),
+      ease: 'power2.inOut',
+      overwrite: true,
+      onUpdate: () => {
+        window.scrollTo(0, proxy.y)
+      },
+      onComplete: () => {
+        scrollTween = null
+      },
     })
   })
 

@@ -7,7 +7,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xbdevgzl'
 
 export function Contact() {
   return `
-    <div id="contact" class="pb-10 md:pb-26 lg:pt-12 page-x">
+    <div class="pb-10 md:pb-26 lg:pt-12 page-x">
      <div class="max-w-150 lg:max-w-295 mx-auto">
        <div class="flex justify-between flex-col lg:flex-row md:gap-10">
         <div id="contact-copy" class="lg:px-8 lg:pt-12">
@@ -16,7 +16,7 @@ export function Contact() {
           <p class="text-gray-dark text-balance text-base lg:text-[20px] mb-10 md:mb-5 lg:mb-0 text-center lg:text-left">Déjanos tus datos y te contactaremos pronto para entender tu negocio y sugerirte el siguiente paso.</p>
         </div>
         <div>
-          <div class="bg-white px-6 py-8 md:p-12 rounded-lg w-full lg:w-142.5">
+          <div id="contact-form-card" class="bg-white px-6 py-8 md:p-12 rounded-lg w-full lg:w-142.5">
             <form id="contact-form" action="${FORMSPREE_ENDPOINT}" method="POST">
               <input type="hidden" name="_subject" value="Nueva solicitud de contacto — Astrea Comunicaciones" />
 
@@ -24,15 +24,15 @@ export function Contact() {
                 <label>No llenar este campo: <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
               </p>
 
-              <div class="mb-5 w-full">
+              <div class="mb-5 w-full contact-field">
                 <label for="nombre" class="block text-gray-dark text-sm font-bold mb-2">Nombre</label>
                 <input type="text" id="nombre" name="nombre" class="p-3 px-4 border border-primary rounded-lg w-full bg-beige text-sm md:text-base" placeholder="Tu nombre" autocomplete="name" required>
               </div>
-              <div class="mb-5 w-full">
+              <div class="mb-5 w-full contact-field">
                 <label for="empresa" class="block text-gray-dark text-sm font-bold mb-2">Empresa</label>
                 <input type="text" id="empresa" name="empresa" class="p-3 px-4 border border-primary rounded-lg w-full bg-beige text-sm md:text-base" placeholder="Nombre de tu empresa" autocomplete="organization" required>
               </div>
-              <div class="mb-5 w-full">
+              <div class="mb-5 w-full contact-field">
                 <label for="telefono" class="block text-gray-dark text-sm font-bold mb-2">Número de teléfono</label>
                 <input
                   type="tel"
@@ -48,7 +48,7 @@ export function Contact() {
                   required
                 >
               </div>
-              <div class="mb-10 w-full">
+              <div class="mb-10 w-full contact-field">
                 <label for="email" class="block text-gray-dark text-sm font-bold mb-2">Correo electrónico</label>
                 <input type="email" id="email" name="email" class="p-3 px-4 border border-primary rounded-lg w-full bg-beige text-sm md:text-base" placeholder="correo@empresa.com" autocomplete="email" required>
               </div>

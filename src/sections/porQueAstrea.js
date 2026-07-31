@@ -10,7 +10,7 @@ export function PorQueAstrea() {
       title: '¿Qué hacemos?',
       description:
         'Diseñamos estrategias de comunicación que fortalecen la confianza y la reputación.',
-      href: '#features',
+      href: '#enfoque',
     },
     {
       image: comoLoHacemosImage,
@@ -72,7 +72,7 @@ export function PorQueAstrea() {
     .join('')
 
   return `
-    <section id="por-que-astrea" class="py-16 md:py-24 page-x">
+    <section id="servicios" class="py-16 md:py-24 page-x">
       <div class="max-w-295 mx-auto">
         <!-- Header -->
         <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
