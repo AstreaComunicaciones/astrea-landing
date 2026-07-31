@@ -1,6 +1,7 @@
 import './style.css'
 
 import { Hero } from './sections/hero.js'
+import { PorQueAstrea } from './sections/porQueAstrea.js'
 import { Navbar, initNavbar } from './sections/navbar.js'
 import { Features } from './sections/features.js'
 import {
@@ -17,6 +18,7 @@ import { initAnimations } from './js/animations.js'
 document.getElementById('navbar').innerHTML = Navbar()
 initNavbar()
 document.getElementById('hero').innerHTML = Hero()
+document.getElementById('por-que-astrea-section').innerHTML = PorQueAstrea()
 document.getElementById('features').innerHTML = Features()
 document.getElementById('services-v1').innerHTML = ServicesCardsV1()
 document.getElementById('services-v2').innerHTML = ServicesCardsV2()

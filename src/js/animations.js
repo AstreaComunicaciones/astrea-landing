@@ -96,6 +96,20 @@ function animateFeatureCards() {
   })
 }
 
+function animatePorQueAstrea() {
+  gsap.from('#por-que-astrea-section', {
+    opacity: 0,
+    y: 32,
+    duration: 0.8,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: '#por-que-astrea-section',
+      start: 'top 85%',
+      once: true,
+    },
+  })
+}
+
 function animateContactCopy() {
   gsap.from('#contact-copy > *', {
     opacity: 0,
@@ -139,6 +153,7 @@ export function initAnimations() {
     animateContactTitleMobile()
   } else {
     animateHeroDesktop()
+    animatePorQueAstrea()
     animateFeatureCards()
     animateContactCopy()
   }

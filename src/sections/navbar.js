@@ -35,7 +35,7 @@ export function Navbar() {
     .join('')
 
   return `
-    <div class="relative z-[60] max-w-295 mx-auto px-5 xl:px-0">
+    <div class="relative z-60 max-w-295 mx-auto px-5 xl:px-0">
       <div class="nav-container flex items-center justify-between gap-4">
         <a href="/" class="shrink-0 flex items-center" aria-label="Astrea Comunicaciones">
           <img
