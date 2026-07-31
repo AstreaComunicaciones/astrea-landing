@@ -72,7 +72,7 @@ export function PorQueAstrea() {
     .join('')
 
   return `
-    <section id="por-que-astrea" class="py-16 md:py-24 px-5 xl:px-0">
+    <section id="por-que-astrea" class="py-16 md:py-24 page-x">
       <div class="max-w-295 mx-auto">
         <!-- Header -->
         <div class="text-center max-w-3xl mx-auto mb-12 md:mb-16">
@@ -92,8 +92,9 @@ export function PorQueAstrea() {
           </div>
         </div>
 
-        <!-- 3 Cards Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 md:max-w-96 md:mx-auto lg:max-w-none lg:mx-0">
+        <!-- 3 Cards Grid
+             mobile: 1 col | tablet: 2 + 1 centered | desktop: 3 cols -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 md:[&>*:last-child]:col-span-2 md:[&>*:last-child]:w-full md:[&>*:last-child]:max-w-[calc((100%-1.5rem)/2)] md:[&>*:last-child]:justify-self-center lg:[&>*:last-child]:col-span-1 lg:[&>*:last-child]:max-w-none">
           ${cardsHtml}
         </div>
       </div>

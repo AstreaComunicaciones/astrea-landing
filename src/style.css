@@ -47,12 +47,12 @@
   --color-gray-primary: #7F7F7F;
   --color-gray-dark: #3D3E42;
 
-  /* Breakpoints (mobile-first: md ≥765px, lg ≥992px, xl ≥1200px) */
+  /* Breakpoints (mobile-first: md ≥765px, lg ≥992px, xl ≥1200px, 2xl ≥1400px) */
   --breakpoint-*: initial;
   --breakpoint-md: 765px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --breakpoint-2xl: 1800px;
+  --breakpoint-2xl: 1400px;
 }
 
 /* =============================================
@@ -60,7 +60,8 @@
    ============================================= */
 @layer base {
   html {
-    scroll-behavior: smooth;
+    /* Avoid scroll-behavior: smooth here — it fights ScrollTrigger scrub
+       (esp. with mouse wheel). Anchor smooth-scroll is handled in JS. */
   }
 
   body {
@@ -155,6 +156,20 @@
    CUSTOM COMPONENTS (reusable patterns)
    ============================================= */
 @layer components {
+  /*
+    Horizontal page gutter (.page-x)
+    Mobile  (<765):   20px — phones
+    Tablet  (765–991): 40px — iPad Air portrait
+    Tablet+ (992–1199): 48px
+    Laptop  (1200–1399): 64px — MacBook Air ~1280; forces real side air
+                           (1180 + 2×64 = 1308 → below that, content shrinks)
+    Desktop (≥1400):  0    — respect max-w 1180 / max-w-295 centered as-is
+    Use with max-w-295 or max-w-[1180px] on every section shell.
+  */
+  .page-x {
+    @apply px-5 md:px-10 lg:px-12 xl:px-12 2xl:px-0;
+  }
+
   .btn-primary {
     @apply inline-flex items-center gap-2 bg-primary text-white py-2 px-4 rounded-lg cursor-pointer;
   }

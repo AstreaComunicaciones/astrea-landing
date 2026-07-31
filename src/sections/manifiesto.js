@@ -1,50 +1,44 @@
-import meetingImage from '../assets/images/hero-meeting.webp'
+import manifiestoFullImage from '../assets/images/manifiesto-full-image-parallax.webp'
 import {
+  manifestoHeader,
+  manifestoHeadline,
   manifestoLines,
   manifestoClosing,
+  manifestoPillars,
   commitments,
-  manifestoAnchor,
 } from '../data/manifiesto.js'
 
-/**
- * Manifiesto Astrea — cita ancla + banda oscura + compromiso
- */
 export function Manifiesto() {
-  const bodyLines = manifestoLines
-    .slice(2, 7)
+  const linesHtml = manifestoLines
     .map(
-      (line) => `
-      <p class="font-medium text-white/70 text-base md:text-lg leading-relaxed">
+      (line, i) => `
+      <p class="${i === manifestoLines.length - 1 ? 'pt-2 text-white/85' : ''}">
         ${line}
       </p>
     `
     )
     .join('')
 
-  const pillars = [
-    'Generar comprensión',
-    'Reducir incertidumbre',
-    'Fortalecer relaciones',
-  ]
+  const pillarsHtml = manifestoPillars
     .map(
-      (text) => `
-      <div class="border-t border-white/15 py-6 md:py-7 first:border-t first:pt-6">
-        <p class="font-display font-semibold text-beige text-xl md:text-2xl leading-snug">
-          ${text}
+      (pillar) => `
+      <div class="py-5 md:py-6">
+        <p class="font-display font-medium text-white/90 text-xl md:text-2xl leading-snug">
+          ${pillar}
         </p>
       </div>
     `
     )
     .join('')
 
-  const items = commitments
+  const commitmentsHtml = commitments
     .map(
-      (text, i) => `
-      <li class="flex gap-4">
-        <span class="font-display font-bold text-primary text-lg shrink-0 leading-none pt-0.5">
-          ${String(i + 1).padStart(2, '0')}
+      (text, index) => `
+      <li class="flex gap-5 items-baseline">
+        <span class="font-display font-bold text-primary text-xl md:text-2xl shrink-0 leading-none">
+          ${String(index + 1).padStart(2, '0')}
         </span>
-        <p class="font-medium text-gray-dark text-sm md:text-base leading-relaxed">
+        <p class="font-sans font-normal text-gray-dark text-base md:text-lg leading-snug">
           ${text}
         </p>
       </li>
@@ -53,63 +47,77 @@ export function Manifiesto() {
     .join('')
 
   return `
-    <div class="border-t border-black/5">
-      <div class="bg-gray-dark">
-        <div class="max-w-295 mx-auto px-5 xl:px-0 py-16 md:py-24">
-          <p class="font-bold text-primary text-sm md:text-base tracking-[0.02em] uppercase mb-5">
-            Manifiesto Astrea
+    <div id="manifiesto-section">
+      <!-- 1. Parte Manifiesto (Fondo Oscuro #3D3E42) -->
+      <div class="bg-gray-dark text-white py-16 md:py-24 page-x">
+        <div class="max-w-295 mx-auto">
+          <p class="font-bold text-primary text-xs md:text-sm tracking-[0.12em] uppercase mb-4 md:mb-6">
+            ${manifestoHeader}
           </p>
-          <h2 class="font-display font-semibold text-beige text-3xl md:text-5xl lg:text-[56px] leading-[1.12] max-w-[16ch] mb-10 md:mb-14">
-            ${manifestoAnchor}
-          </h2>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            <div class="lg:col-span-7 space-y-3 md:space-y-4">
-              ${bodyLines}
-              <p class="pt-6 font-medium text-beige/90 text-base md:text-lg leading-relaxed max-w-[40ch] border-l border-primary pl-5">
-                ${manifestoClosing}
-              </p>
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <!-- Columna Izquierda: Título y Frases -->
+            <div class="lg:col-span-7">
+              <h2 class="font-display font-semibold text-white text-3xl md:text-4xl lg:text-[40px] leading-[1.2] mb-8 max-w-[18ch]">
+                ${manifestoHeadline}
+              </h2>
+
+              <div class="space-y-3 font-sans font-medium text-white/70 text-base md:text-lg leading-relaxed mb-8 md:mb-10">
+                ${linesHtml}
+              </div>
+
+              <div class="border-l-2 border-primary pl-5 py-1">
+                <p class="font-sans font-medium text-white/90 text-base md:text-lg leading-relaxed max-w-[42ch]">
+                  ${manifestoClosing}
+                </p>
+              </div>
             </div>
 
-            <div class="lg:col-span-5 lg:pt-1">
-              <p class="font-bold text-primary text-xs tracking-[0.14em] uppercase mb-2 md:mb-3">
+            <!-- Columna Derecha: Lo que buscamos -->
+            <div class="lg:col-span-5 lg:pt-2">
+              <p class="font-bold text-primary text-xs md:text-sm tracking-[0.12em] uppercase mb-4">
                 Lo que buscamos
               </p>
-              <div>
-                ${pillars}
+              <div class="border-t border-white/15 divide-y divide-white/15">
+                ${pillarsHtml}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="relative w-full aspect-[2.4/1] min-h-[220px] max-h-[420px] overflow-hidden">
+      <!-- 2. Imagen en ancho completo con efecto Parallax -->
+      <div id="parallax-section" class="relative w-full h-[380px] sm:h-[450px] md:h-[500px] overflow-hidden bg-gray-dark">
         <img
-          src="${meetingImage}"
-          alt=""
-          class="absolute inset-0 size-full object-cover"
-          width="1600"
-          height="670"
+          id="parallax-image"
+          src="${manifiestoFullImage}"
+          alt="Astrea Comunicaciones"
+          class="absolute inset-0 size-full object-cover scale-125 will-change-transform pointer-events-none"
           loading="lazy"
-          aria-hidden="true"
         />
-        <div class="absolute inset-0 bg-black/20" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-black/10 pointer-events-none" aria-hidden="true"></div>
       </div>
 
-      <div class="bg-white">
-        <div class="max-w-295 mx-auto px-5 xl:px-0 py-14 md:py-20">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14">
-            <div class="lg:col-span-4">
-              <p class="font-bold text-primary text-sm tracking-[0.02em] uppercase mb-3">
+      <!-- 3. Parte Compromiso (Fondo Blanco) -->
+      <div class="bg-white py-16 md:py-24 page-x">
+        <div class="max-w-295 mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <!-- Columna Izquierda: Encabezado -->
+            <div class="lg:col-span-5">
+              <p class="font-bold text-primary text-xs md:text-sm tracking-[0.12em] uppercase mb-3">
                 Nuestro compromiso
               </p>
-              <h3 class="font-display font-semibold text-gray-dark text-2xl md:text-3xl leading-snug max-w-[16ch]">
+              <h2 class="font-display font-semibold text-gray-dark text-3xl md:text-4xl lg:text-[40px] leading-[1.2] max-w-[16ch]">
                 Cómo acompañamos a cada organización.
-              </h3>
+              </h2>
             </div>
-            <ul class="lg:col-span-8 space-y-5">
-              ${items}
-            </ul>
+
+            <!-- Columna Derecha: Lista numerada de compromisos -->
+            <div class="lg:col-span-7">
+              <ul class="space-y-6 md:space-y-7">
+                ${commitmentsHtml}
+              </ul>
+            </div>
           </div>
         </div>
       </div>

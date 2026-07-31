@@ -7,16 +7,16 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xbdevgzl'
 
 export function Contact() {
   return `
-    <div id="contact" class="bg-primary-light py-10 lg:py-28 px-5 xl:px-0">
-     <div class="max-w-[600px] lg:max-w-[1180px] mx-auto">
+    <div id="contact" class="pb-10 md:pb-26 lg:pt-12 page-x">
+     <div class="max-w-150 lg:max-w-295 mx-auto">
        <div class="flex justify-between flex-col lg:flex-row md:gap-10">
         <div id="contact-copy" class="lg:px-8 lg:pt-12">
           <img src="${iconAstrea}" alt="Astrea Comunicaciones" width="160" height="160" class="w-full max-w-32 lg:max-w-40 lg:mb-4 mx-auto lg:mx-0">
-          <h2 class="text-3xl md:text-[40px] leading-normal lg:leading-[55px] font-bold text-gray-dark mb-4 md:mb-8 text-center lg:text-left">¿Qué tienes en mente? <br> ¡Te ayudamos!</h2>
+          <h2 class="text-3xl md:text-[40px] leading-normal md:leading-12.5 font-bold text-gray-dark mb-4 md:mb-8 text-center lg:text-left">¿Qué tienes en mente? <br> ¡Te ayudamos!</h2>
           <p class="text-gray-dark text-balance text-base lg:text-[20px] mb-10 md:mb-5 lg:mb-0 text-center lg:text-left">Déjanos tus datos y te contactaremos pronto para entender tu negocio y sugerirte el siguiente paso.</p>
         </div>
         <div>
-          <div class="bg-white px-6 py-8 md:p-12 rounded-lg w-full lg:w-[570px]">
+          <div class="bg-white px-6 py-8 md:p-12 rounded-lg w-full lg:w-142.5">
             <form id="contact-form" action="${FORMSPREE_ENDPOINT}" method="POST">
               <input type="hidden" name="_subject" value="Nueva solicitud de contacto — Astrea Comunicaciones" />
 

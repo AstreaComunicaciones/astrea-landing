@@ -1,21 +1,24 @@
-/** Shared copy for Manifiesto comparison proposals */
+/** Data for Manifiesto & Compromiso Astrea */
+
+export const manifestoHeader = 'MANIFIESTO ASTREA COMUNICACIONES'
+
+export const manifestoHeadline = 'La confianza no ocurre por casualidad.'
 
 export const manifestoLines = [
-  'Creemos que la confianza no se compra.',
-  'Se construye.',
-  'No nace de una campaña.',
-  'Nace de miles de decisiones coherentes.',
-  'De conversaciones honestas.',
-  'De mensajes claros.',
-  'De instituciones que comunican con propósito.',
-  'Porque comunicar mejor no significa decir más.',
-  'Significa generar comprensión.',
-  'Reducir incertidumbre.',
-  'Fortalecer relaciones.',
+  'Se diseña.',
+  'Se comunica.',
+  'Se sostiene.',
+  'Ese es el principio que guía todo lo que hacemos.',
 ]
 
 export const manifestoClosing =
   'En Astrea Comunicaciones diseñamos estrategias para que las organizaciones construyan confianza antes de necesitar defenderla.'
+
+export const manifestoPillars = [
+  'Generar comprensión',
+  'Reducir incertidumbre',
+  'Fortalecer relaciones',
+]
 
 export const commitments = [
   'Trabajamos como aliados estratégicos de cada organización.',
@@ -24,5 +27,3 @@ export const commitments = [
   'Diseñamos soluciones sostenibles, respetando la identidad, las personas y el propósito institucional.',
   'Cada proyecto es una relación de confianza.',
 ]
-
-export const manifestoAnchor = 'La confianza no se compra. Se construye.'

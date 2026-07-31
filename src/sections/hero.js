@@ -22,7 +22,7 @@ export function Hero() {
       ></div>
 
       <div class="relative z-10 flex min-h-svh items-end md:items-center">
-        <div class="max-w-295 w-full mx-auto px-5 xl:px-0 pt-24 pb-12 md:pt-32 md:pb-20">
+        <div class="max-w-295 w-full mx-auto page-x pt-24 pb-12 md:pt-32 md:pb-20">
           <p
             id="hero-eyebrow"
             class="font-bold text-primary text-xs tracking-[0.08em] md:text-base md:tracking-[0.02em] mb-4 md:mb-5"

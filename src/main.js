@@ -5,6 +5,7 @@ import { Hero } from './sections/hero.js'
 import { PorQueAstrea } from './sections/porQueAstrea.js'
 import { Enfoque, initEnfoqueAccordion } from './sections/enfoque.js'
 import { Manifiesto } from './sections/manifiesto.js'
+import { Equipo } from './sections/equipo.js'
 import { Contact, initContactForm } from './sections/contact.js'
 import { Footer } from './sections/footer.js'
 import { initAnimations } from './js/animations.js'
@@ -24,6 +25,11 @@ if (enfoqueEl) {
 const manifiestoEl = document.getElementById('manifiesto')
 if (manifiestoEl) {
   manifiestoEl.innerHTML = Manifiesto()
+}
+
+const equipoEl = document.getElementById('equipo')
+if (equipoEl) {
+  equipoEl.innerHTML = Equipo()
 }
 
 const contactEl = document.getElementById('contact')

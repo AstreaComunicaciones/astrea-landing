@@ -85,7 +85,7 @@ export function Enfoque() {
 
   return `
     <div class="bg-white">
-      <div class="max-w-295 mx-auto px-5 xl:px-0 py-16 md:py-24">
+      <div class="max-w-295 mx-auto page-x py-16 md:py-24">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
           <!-- Accordion Column -->
           <div class="lg:col-span-7">
@@ -103,7 +103,7 @@ export function Enfoque() {
 
           <!-- Stacked Images Column -->
           <div class="lg:col-span-5 flex flex-col gap-6 pt-2">
-            <div class="relative overflow-hidden rounded-lg shadow-[0px_20px_40px_0px_rgba(0,0,0,0.05)] aspect-[4/5] sm:aspect-[16/11] lg:aspect-[4/4.7] w-full bg-gray-100">
+            <div class="relative overflow-hidden rounded-lg shadow-[0px_20px_40px_0px_rgba(0,0,0,0.05)] aspect-4/5 sm:aspect-[16/11] lg:aspect-[4/4.7] w-full bg-gray-100">
               <img
                 src="${enfoqueImageTop}"
                 alt="Enfoque de trabajo Astrea"
@@ -111,7 +111,7 @@ export function Enfoque() {
                 loading="lazy"
               />
             </div>
-            <div class="relative overflow-hidden rounded-lg shadow-[0px_20px_40px_0px_rgba(0,0,0,0.05)] aspect-[16/9] lg:aspect-[16/9.5] w-full bg-gray-100">
+            <div class="relative overflow-hidden rounded-lg shadow-[0px_20px_40px_0px_rgba(0,0,0,0.05)] aspect-video lg:aspect-16/9.5 w-full bg-gray-100">
               <img
                 src="${enfoqueImageBottom}"
                 alt="Reunión de estrategia Astrea"

@@ -35,7 +35,7 @@ export function Navbar() {
     .join('')
 
   return `
-    <div class="relative z-60 max-w-295 mx-auto px-5 xl:px-0">
+    <div class="relative z-60 max-w-295 mx-auto page-x">
       <div class="nav-container flex items-center justify-between gap-4">
         <a href="/" class="shrink-0 flex items-center" aria-label="Astrea Comunicaciones">
           <img
@@ -135,6 +135,20 @@ export function initNavbar() {
     if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
       setOpen(false)
     }
+  })
+
+  // Smooth in-page anchors without CSS scroll-behavior (keeps ScrollTrigger stable)
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const id = anchor.getAttribute('href')
+      if (!id || id === '#') return
+      const target = document.querySelector(id)
+      if (!target) return
+      e.preventDefault()
+      const headerOffset = header?.offsetHeight ?? 0
+      const top = target.getBoundingClientRect().top + window.scrollY - headerOffset
+      window.scrollTo({ top, behavior: 'smooth' })
+    })
   })
 
   // Glassmorphic header after scrolling past Hero section

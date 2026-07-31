@@ -125,6 +125,36 @@ function animateContactCopy() {
   })
 }
 
+function animateParallax() {
+  const container = document.querySelector('#parallax-section')
+  const image = document.querySelector('#parallax-image')
+  if (!container || !image) return
+
+  gsap.fromTo(
+    image,
+    { yPercent: -12 },
+    {
+      yPercent: 12,
+      ease: 'none',
+      force3D: true,
+      scrollTrigger: {
+        trigger: container,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 0.4, // Smooths discrete mouse-wheel ticks over 0.4s while remaining fluid on trackpads
+        invalidateOnRefresh: true,
+      },
+    }
+  )
+
+  const refresh = () => ScrollTrigger.refresh()
+  if (image.complete) {
+    refresh()
+  } else {
+    image.addEventListener('load', refresh, { once: true })
+  }
+}
+
 function animateContactTitleMobile() {
   const contactTitle = document.querySelector('#contact-copy h2')
   if (!contactTitle) return
@@ -148,6 +178,7 @@ export function initAnimations() {
   const mobile = isMobile()
 
   animateHeroTitle(mobile)
+  animateParallax()
 
   if (mobile) {
     animateContactTitleMobile()
