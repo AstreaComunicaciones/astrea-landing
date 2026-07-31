@@ -1,4 +1,5 @@
-import enfoqueImage from '../assets/images/enfoque-portrait.webp'
+import enfoqueImageTop from '../assets/images/enfoque-pilares-image-top.webp'
+import enfoqueImageBottom from '../assets/images/enfoque-pilares-image-bottom.webp'
 
 const principles = [
   {
@@ -43,18 +44,18 @@ export function Enfoque() {
   const items = principles
     .map(
       (p, index) => `
-    <div class="enfoque-item border-b border-black/5 last:border-b-0" data-open="${index === 0}">
+    <div class="enfoque-item border-b border-black/10 last:border-b-0" data-open="${index === 0}">
       <button
         type="button"
-        class="enfoque-accordion-btn w-full py-5 flex items-center justify-between gap-4 text-left group"
+        class="enfoque-accordion-btn w-full py-6 md:py-7.5 flex items-center justify-between gap-4 text-left group cursor-pointer"
         data-index="${index}"
         aria-expanded="${index === 0 ? 'true' : 'false'}"
       >
-        <div class="flex items-center gap-4 md:gap-5 min-w-0">
-          <span class="font-display font-bold text-xl md:text-2xl text-primary tracking-[0.02em] shrink-0">
+        <div class="flex items-center gap-5 md:gap-8 min-w-0">
+          <span class="font-display font-bold text-2xl md:text-3xl text-primary tracking-[0.02em] shrink-0">
             ${p.number}
           </span>
-          <h3 class="font-semibold text-gray-dark text-lg md:text-xl tracking-[0.01em] group-hover:text-primary transition-colors duration-200">
+          <h3 class="font-display font-semibold text-gray-dark text-xl md:text-2xl tracking-[0.01em] group-hover:text-primary transition-colors duration-200">
             ${p.title}
           </h3>
         </div>
@@ -72,7 +73,7 @@ export function Enfoque() {
         }"
       >
         <div class="overflow-hidden">
-          <p class="font-medium text-gray-primary text-sm md:text-base leading-[1.6] pb-5 pl-10 md:pl-12 max-w-[540px]">
+          <p class="font-sans font-medium text-gray-primary text-sm md:text-base leading-[1.6] pb-6 pl-11 md:pl-16 max-w-125">
             ${p.description}
           </p>
         </div>
@@ -85,28 +86,36 @@ export function Enfoque() {
   return `
     <div class="bg-white">
       <div class="max-w-295 mx-auto px-5 xl:px-0 py-16 md:py-24">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+          <!-- Accordion Column -->
           <div class="lg:col-span-7">
-            <p class="font-bold text-primary text-sm md:text-base tracking-[0.02em] mb-3 uppercase">
-              Nuestro enfoque
+            <p class="font-bold text-primary text-xs md:text-sm tracking-[0.12em] uppercase mb-3">
+              Nuestro Enfoque
             </p>
-            <h2 class="font-display font-semibold text-gray-dark text-3xl md:text-[40px] leading-[1.2] mb-8 md:mb-10 max-w-[18ch]">
-              Un método riguroso orientado a construir reputación.
+            <h2 class="font-display font-semibold text-gray-dark text-3xl md:text-4xl lg:text-[40px] leading-[1.2] mb-8 md:mb-12 max-w-[18ch]">
+              Los principios que construyen confianza
             </h2>
 
-            <div id="enfoque-accordion">
+            <div id="enfoque-accordion" class="border-t border-black/10">
               ${items}
             </div>
           </div>
 
-          <div class="lg:col-span-5">
-            <div class="relative overflow-hidden rounded-2xl aspect-[4/5] lg:aspect-auto lg:h-full lg:min-h-[720px]">
+          <!-- Stacked Images Column -->
+          <div class="lg:col-span-5 flex flex-col gap-6 pt-2">
+            <div class="relative overflow-hidden rounded-lg shadow-[0px_20px_40px_0px_rgba(0,0,0,0.05)] aspect-[4/5] sm:aspect-[16/11] lg:aspect-[4/4.7] w-full bg-gray-100">
               <img
-                src="${enfoqueImage}"
+                src="${enfoqueImageTop}"
                 alt="Enfoque de trabajo Astrea"
                 class="absolute inset-0 size-full object-cover"
-                width="600"
-                height="900"
+                loading="lazy"
+              />
+            </div>
+            <div class="relative overflow-hidden rounded-lg shadow-[0px_20px_40px_0px_rgba(0,0,0,0.05)] aspect-[16/9] lg:aspect-[16/9.5] w-full bg-gray-100">
+              <img
+                src="${enfoqueImageBottom}"
+                alt="Reunión de estrategia Astrea"
+                class="absolute inset-0 size-full object-cover"
                 loading="lazy"
               />
             </div>

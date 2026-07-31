@@ -3,7 +3,7 @@ import iconRight from '../assets/images/icon-right.svg'
 const iconAstrea = '/astrea-comunicaciones-logo-header.webp'
 
 const navLinks = [
-  { label: 'Servicios', href: '#features' },
+  { label: 'Servicios', href: '#por-que-astrea-section' },
   { label: 'Enfoque', href: '#enfoque' },
   { label: 'Equipo', href: '#equipo' },
 ]
