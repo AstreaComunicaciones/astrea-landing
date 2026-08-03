@@ -7,7 +7,7 @@ Sitio web institucional de Astrea Comunicaciones. Construido con Vite + Tailwind
 - **Vite** — bundler y dev server
 - **Tailwind CSS v4** — estilos utilitarios
 - **GSAP** — animaciones
-- **Formspree** — manejo del formulario de contacto (sin backend)
+- **Formspree** —---- manejo del formulario de contacto (sin backend)
 
 ## Requisitos
 
